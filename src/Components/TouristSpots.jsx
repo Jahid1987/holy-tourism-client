@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import Card from "./Card";
 
 const TouristSpots = () => {
+  useEffect(() => {
+    fetch("https://holy-tourism-server.vercel.app/users")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
+
   return (
     <div className="max-w-[1024px] mx-auto">
       {/* section title  */}
@@ -11,6 +18,8 @@ const TouristSpots = () => {
         </h2>
       </div>
       <div className="grid gap-3 px-1 xl:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <Card></Card>
+        <Card></Card>
         <Card></Card>
         <Card></Card>
         <Card></Card>
