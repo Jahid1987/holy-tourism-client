@@ -13,7 +13,7 @@ const CountryCard = () => {
         </p>
         <div className="card-actions justify-end">
           <button className="btn btn-outline btn-sm md:btn-md rounded-full border-[#DF6951]  font-light text-white">
-            <span className="px-2">See all</span>
+            <span className="px-2">See All</span>
           </button>
         </div>
       </div>

@@ -2,7 +2,7 @@ import honeymoon_1 from "../assets/images/honeymoon_1.png";
 import honeymoon_2 from "../assets/images/honeymoon_2.png";
 const Romantic = () => {
   return (
-    <div className="px-1 xl:px-0 flex flex-col md:flex-row justify-between items-center  gap-5 md:gap-10 max-w-[1024px] mx-auto my-5 md:my-10">
+    <div className="px-1 xl:px-0 flex flex-col md:flex-row justify-between items-center  gap-5 md:gap-10 max-w-[1024px] mx-auto my-5 md:my-20">
       <div className="relative w-full md:max-w-[370px] lg:max-w-[470px]">
         <div className="rounded-tl-full rounded-tr-full">
           <img

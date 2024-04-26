@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const Review = () => {
   return (
     <div
-      className=" max-w-[1440px] px-2 py-5 mx-auto"
+      className=" max-w-[1440px] px-2 py-5 md:py-10 mx-auto"
       style={{
         background: `url(${reviewImg}) lightgray 0px 0px / 100% 234.375% no-repeat`,
       }}
