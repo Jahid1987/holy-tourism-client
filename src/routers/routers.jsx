@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import AllSpots from "../Pages/AllSpots";
 import AddSpot from "../Pages/AddSpot";
 import MyList from "../Pages/MyList";
+import Spot from "../Pages/Spot";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
       {
         path: "/spots",
         element: <AllSpots></AllSpots>,
+      },
+      {
+        path: "/spot/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/spots/${params.id}`),
+        element: <Spot></Spot>,
       },
       {
         path: "/create",

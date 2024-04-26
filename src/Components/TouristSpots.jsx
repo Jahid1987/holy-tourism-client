@@ -20,11 +20,9 @@ const TouristSpots = () => {
         </h2>
       </div>
       <div className="grid gap-3 px-1 xl:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        {spots.map((spot) => (
+          <Card key={spot._id} spot={spot}></Card>
+        ))}
       </div>
     </div>
   );
