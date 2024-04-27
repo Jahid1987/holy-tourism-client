@@ -9,6 +9,8 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  GithubAuthProvider,
+  FacebookAuthProvider,
 } from "firebase/auth";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -16,6 +18,8 @@ const AuthProvider = ({ children }) => {
 
   // social media providers
   const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
   // signing in user
   function signInUser(email, password) {
     setIsLoading(true);
@@ -39,6 +43,19 @@ const AuthProvider = ({ children }) => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
   }
+
+  // signing with gitHub
+  function signInWithGitHub() {
+    setIsLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  }
+
+  // signing with facebook
+  function signInWithFacebook() {
+    setIsLoading(true);
+    return signInWithPopup(auth, facebookProvider);
+  }
+
   // observe the user
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -56,6 +73,8 @@ const AuthProvider = ({ children }) => {
     registerWithEmailPass,
     updateUserProfile,
     registerUserWithGoogle,
+    signInWithGitHub,
+    signInWithFacebook,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

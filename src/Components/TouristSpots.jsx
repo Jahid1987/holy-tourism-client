@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Card from "./Card";
+import { Link } from "react-router-dom/dist";
 
 const TouristSpots = () => {
   const [spots, setSpots] = useState([]);
@@ -19,11 +20,26 @@ const TouristSpots = () => {
           Our Trending Tour Packages
         </h2>
       </div>
-      <div className="grid gap-3 px-1 xl:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {spots.map((spot) => (
-          <Card key={spot._id} spot={spot}></Card>
-        ))}
-      </div>
+      {/* showing all 6 items  */}
+      {spots.length > 0 ? (
+        <div className="grid gap-3 px-1 xl:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {spots.slice(0, 6).map((spot) => (
+            <Card key={spot._id} spot={spot}></Card>
+          ))}
+        </div>
+      ) : (
+        <p>Loading ...</p>
+      )}
+      {/* showing show all button  */}
+      {spots.length > 6 && (
+        <div className=" w-full md:w-2/3 lg:w-1/3 mx-auto text-center my-5 md:my-10">
+          <Link to="/spots">
+            <button className="btn btn-sm md:btn-md rounded-full border-none bg-[#DF6951] font-light text-white">
+              <span className="px-3">Show All</span>
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
