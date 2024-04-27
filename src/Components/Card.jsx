@@ -2,16 +2,12 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
 import demoImg from "../assets/images/demo_spot.png";
-import flagImg from "../assets/images/demo_flag.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import { useState } from "react";
 
 const Card = ({ spot }) => {
-  const [rating] = useState(0);
-
   function onChange(newvalue) {
     console.log(newvalue);
   }
@@ -21,8 +17,8 @@ const Card = ({ spot }) => {
       <figure className="relative">
         <img src={demoImg} alt="" />
         <img
-          className="absolute bottom-0  right-0 w-[76px] h-[76px] rounded-full"
-          src={flagImg}
+          className="absolute bottom-2 right-2 border-white border-2 w-[50px] h-[50px] rounded-full"
+          src={spot?.country_flag}
           alt=""
         />
       </figure>
@@ -40,7 +36,7 @@ const Card = ({ spot }) => {
           <h2 className="card-title"> {spot?.tourist_spot_name} </h2>
           <Rating
             style={{ maxWidth: 100, height: "24px" }}
-            value={rating}
+            value={spot?.default_rating}
             onChange={onChange}
             transition="zoom"
           />

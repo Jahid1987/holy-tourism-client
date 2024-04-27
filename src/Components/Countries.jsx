@@ -1,6 +1,13 @@
+import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 
 const Countries = () => {
+  const [countries, setCountries] = useState([]);
+  useEffect(() => {
+    fetch("https://holy-tourism-server.vercel.app/countries")
+      .then((res) => res.json())
+      .then((data) => setCountries(data));
+  }, []);
   return (
     <div className="max-w-[1024px] mx-auto">
       {/* section title  */}
@@ -11,9 +18,9 @@ const Countries = () => {
         </h2>
       </div>
       <div className="grid gap-3 px-1 xl:px-0 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <CountryCard></CountryCard>
-        <CountryCard></CountryCard>
-        <CountryCard></CountryCard>
+        {countries.map((country) => (
+          <CountryCard country={country} key={country._id}></CountryCard>
+        ))}
       </div>
     </div>
   );

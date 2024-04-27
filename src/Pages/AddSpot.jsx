@@ -3,15 +3,16 @@ import Swal from "sweetalert2";
 import useAuth from "../CustomHooks/useAuth";
 
 const AddCoffee = () => {
-  const [countries, setCountries] = useState([]);
   const { user } = useAuth();
+  const [countries, setCountries] = useState([]);
+  const [flag, setFlag] = useState("");
 
   useEffect(() => {
     fetch("https://holy-tourism-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
-
+  // adding spost to the spot collection
   function handleAddSpot(e) {
     e.preventDefault();
     const form = e.target;
@@ -26,6 +27,8 @@ const AddCoffee = () => {
     const total_visitors_per_year = form.total_visitors_per_year.value;
     const user_email = user?.email;
     const user_name = user?.displayName;
+    const country_flag = flag;
+    const default_rating = Math.floor(Math.random() * 4) + 2;
 
     const newSpot = {
       tourist_spot_name,
@@ -39,6 +42,8 @@ const AddCoffee = () => {
       total_visitors_per_year,
       user_email,
       user_name,
+      country_flag,
+      default_rating,
     };
     console.log(newSpot);
     fetch("https://holy-tourism-server.vercel.app/spots", {
@@ -66,6 +71,14 @@ const AddCoffee = () => {
           });
         }
       });
+  }
+  // setting country flag to show in all spots sections in the corner
+  function handleCountryFlag(e) {
+    const countryName = e.target.value;
+    fetch(`http://localhost:5000/countries/${countryName}`)
+      .then((res) => res.json())
+      .then((data) => setFlag(data.image));
+    console.log(flag);
   }
   return (
     <div className="pb-10">
@@ -154,6 +167,7 @@ const AddCoffee = () => {
                   </span>
                 </div>
                 <select
+                  onChange={handleCountryFlag}
                   defaultValue="Select Country"
                   name="country_name"
                   className="select select-bordered w-full"
