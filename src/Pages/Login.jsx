@@ -7,7 +7,7 @@ import useAuth from "../CustomHooks/useAuth";
 import auth from "../Firebse/firebase.config";
 
 const Login = () => {
-  const { signInUser, singInWithGoogle, signInWithGitHub } = useAuth();
+  const { signInUser, registerUserWithGoogle, signInWithGitHub } = useAuth();
   const [isPassword, setIsPassword] = useState(true);
   const location = useLocation();
   const {
@@ -31,8 +31,8 @@ const Login = () => {
   // sign in with google
   async function handleSignInWithGoogle() {
     try {
-      await singInWithGoogle();
-      toast.success(`Welcome to Holy Berth`);
+      await registerUserWithGoogle();
+      toast.success(`Welcome to Holy Tourism`);
       navigate(`${location.state || "/"}`);
     } catch (error) {
       toast.error("Your credentials wrong!");
@@ -43,7 +43,7 @@ const Login = () => {
   async function handleSignInWithGitHub() {
     try {
       await signInWithGitHub();
-      toast.success(`Welcome to Holy Berth`);
+      toast.success(`Welcome to Holy Tourism`);
       navigate(`${location.state || "/"}`);
     } catch (error) {
       toast.error("Your credentials wrong!");

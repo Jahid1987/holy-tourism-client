@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import useAuth from "../CustomHooks/useAuth";
 
 const AddCoffee = () => {
   const [countries, setCountries] = useState([]);
+  const { user } = useAuth();
+
   useEffect(() => {
     fetch("https://holy-tourism-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
-
-  // const { user } = useContext(AuthContext);
-  // console.log(user);
 
   function handleAddSpot(e) {
     e.preventDefault();
@@ -24,8 +24,8 @@ const AddCoffee = () => {
     const image = form.image.value;
     const travel_time = form.travel_time.value;
     const total_visitors_per_year = form.total_visitors_per_year.value;
-    const user_email = "user will come from auth provider";
-    const user_name = "user will come from auth provider";
+    const user_email = user?.email;
+    const user_name = user?.displayName;
 
     const newSpot = {
       tourist_spot_name,

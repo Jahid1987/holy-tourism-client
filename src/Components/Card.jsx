@@ -39,7 +39,7 @@ const Card = ({ spot }) => {
         <div className="flex justify-between">
           <h2 className="card-title"> {spot?.tourist_spot_name} </h2>
           <Rating
-            style={{ maxWidth: 180, height: "24px" }}
+            style={{ maxWidth: 100, height: "24px" }}
             value={rating}
             onChange={onChange}
             transition="zoom"
