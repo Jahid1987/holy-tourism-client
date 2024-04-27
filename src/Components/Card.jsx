@@ -5,9 +5,17 @@ import demoImg from "../assets/images/demo_spot.png";
 import flagImg from "../assets/images/demo_flag.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import { useState } from "react";
 
 const Card = ({ spot }) => {
-  console.log(spot);
+  const [rating] = useState(0);
+
+  function onChange(newvalue) {
+    console.log(newvalue);
+  }
+
   return (
     <div className="card card-compact w-full bg-base-100 shadow-xl">
       <figure className="relative">
@@ -30,33 +38,12 @@ const Card = ({ spot }) => {
         </p>
         <div className="flex justify-between">
           <h2 className="card-title"> {spot?.tourist_spot_name} </h2>
-          <div className="rating">
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-2"
-              className="mask mask-star-2 bg-orange-400"
-            />
-          </div>
+          <Rating
+            style={{ maxWidth: 180, height: "24px" }}
+            value={rating}
+            onChange={onChange}
+            transition="zoom"
+          />
         </div>
         <p>
           Best in: <span className="text-gray-400">{spot?.seasonality}</span>

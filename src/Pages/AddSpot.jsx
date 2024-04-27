@@ -4,16 +4,19 @@ import Swal from "sweetalert2";
 const AddCoffee = () => {
   const [countries, setCountries] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/countries")
+    fetch("https://holy-tourism-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
+
+  // const { user } = useContext(AuthContext);
+  // console.log(user);
 
   function handleAddSpot(e) {
     e.preventDefault();
     const form = e.target;
     const tourist_spot_name = form.tourist_spot_name.value;
-    const average_cost = form.average_cost.value;
+    const average_cost = parseInt(form.average_cost.value);
     const location = form.location.value;
     const seasonality = form.seasonality.value;
     const country_name = form.country_name.value;
@@ -38,7 +41,7 @@ const AddCoffee = () => {
       user_name,
     };
     console.log(newSpot);
-    fetch("http://localhost:5000/spots", {
+    fetch("https://holy-tourism-server.vercel.app/spots", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
