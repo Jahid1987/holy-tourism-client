@@ -18,7 +18,7 @@ const Register = () => {
   async function handleRegister(data) {
     try {
       await registerWithEmailPass(data.email, data.password);
-      await updateUserProfile(data.name, data.photo);
+      await updateUserProfile(data.name);
       navigate("/");
       toast.success("Registration successfull!");
     } catch (error) {
@@ -40,20 +40,6 @@ const Register = () => {
             {...register("name", { required: true })}
           />
           {errors.name && (
-            <span className="text-red-500">This field is required</span>
-          )}
-        </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Photo</span>
-          </label>
-          <input
-            type="photo"
-            placeholder="photo"
-            className="input input-bordered"
-            {...register("photo", { required: true })}
-          />
-          {errors.photo && (
             <span className="text-red-500">This field is required</span>
           )}
         </div>

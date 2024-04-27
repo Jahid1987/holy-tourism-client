@@ -5,6 +5,8 @@ import AllSpots from "../Pages/AllSpots";
 import AddSpot from "../Pages/AddSpot";
 import MyList from "../Pages/MyList";
 import Spot from "../Pages/Spot";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/list",
         element: <MyList></MyList>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },

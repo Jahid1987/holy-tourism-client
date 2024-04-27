@@ -1,29 +1,45 @@
 import PropTypes from "prop-types";
-import { createContext, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import auth from "../Firebse/firebase.config";
 export const AuthContext = createContext(null);
 import {
   createUserWithEmailAndPassword,
+  updateProfile,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
+  // signing in user
+  function signInUser(email, password) {
+    return signInWithEmailAndPassword(auth, email, password);
+  }
   // registering user with email and pass
   function registerWithEmailPass(email, pass) {
     return createUserWithEmailAndPassword(auth, email, pass);
   }
-
-  //   observe the user
+  // updating user profile
+  function updateUserProfile(name) {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+    });
+  }
+  // observe the user
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log(currentUser);
+      setUser(currentUser);
     });
-    return unsubscribe();
+    return () => unsubscribe();
   }, []);
+
+  console.log(user);
   const authInfo = {
-    user: {},
+    user,
+    signInUser,
     registerWithEmailPass,
+    updateUserProfile,
   };
-  console.log(auth);
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
