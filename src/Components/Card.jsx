@@ -16,7 +16,13 @@ const Card = ({ spot }) => {
   return (
     <div className="card card-compact w-full bg-base-100 shadow-xl">
       <figure className="relative">
-        <img src={demoImg} alt="" />
+        <div className="w-full h-[200px]">
+          <img
+            className="object-cover w-full h-full"
+            src={spot?.image || demoImg}
+            alt=""
+          />
+        </div>
         <img
           className="absolute bottom-2 right-2 border-white border-2 w-[50px] h-[50px] rounded-full"
           src={spot?.country_flag}
@@ -30,7 +36,7 @@ const Card = ({ spot }) => {
             <CiCalendar className="inline" /> {spot?.travel_time}
           </span>
           <span className="flex items-center gap-2">
-            <CiLocationOn className="inline" /> {spot?.country_name}
+            <CiLocationOn className="inline" /> {spot?.location}
           </span>
         </p>
         <div className="flex justify-between">

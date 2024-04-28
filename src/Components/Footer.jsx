@@ -13,27 +13,29 @@ const Footer = () => {
         background: `url(${footerImg}) -0.019px -41.058px / 154.946% 129.339% no-repeat`,
       }}
     >
-      <div className="px-1 xl:px-0 grid  justify-start gap-4 text-center md:text-left grid-cols-1 md:grid-cols-3 max-w-[1020px] mx-auto  py-20">
-        <div className="space-y-4">
-          <Link className="btn btn-ghost text-xl" to="/">
-            Holy Tourism
-          </Link>
-          <p className="text-base font-medium text-gray-400">
-            Travel helps companies manage payments easily.
-          </p>
-          <div className=" flex justify-center md:justify-start gap-4 text-xl text-[#DF6951]">
-            <FaWhatsapp />
-            <CiFacebook />
-            <CiLinkedin />
-            <CiTwitter />
+      <div className="px-1 xl:px-0 grid  justify-start gap-2 md:gap-4 text-center md:text-left grid-cols-1 md:grid-cols-3 max-w-[1320px] mx-auto md:py-10 lg:py-20">
+        <div>
+          <div className="space-y-2 md:space-y-4">
+            <Link className="text-xl font-bold" to="/">
+              Holy Tourism
+            </Link>
+            <p className="text-base font-medium text-gray-400">
+              Travel helps companies manage payments easily.
+            </p>
+            <div className=" flex justify-center md:justify-start gap-4 text-xl text-[#DF6951]">
+              <FaWhatsapp />
+              <CiFacebook />
+              <CiLinkedin />
+              <CiTwitter />
+            </div>
+            <p>
+              Cell: <span className="text-gray-400">+88 01643 47 89 96</span>
+            </p>
           </div>
-          <p>
-            Cell: <span className="text-gray-400">+88 01643 47 89 96</span>
-          </p>
         </div>
         <div>
           <p className="font-bold text-xl">Company</p>
-          <ul className="space-y-3">
+          <ul className="space-y-2 md:space-y-4">
             <li className="mt-3">
               <NavLink to="/">Home</NavLink>
             </li>
@@ -50,7 +52,7 @@ const Footer = () => {
         </div>
         <div>
           <p className="font-bold text-xl">Join Our Newsletter</p>
-          <form className="space-y-3">
+          <form className="space-y-2 md:space-y-4">
             <label className="mt-3 input input-bordered flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

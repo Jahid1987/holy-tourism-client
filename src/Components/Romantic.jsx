@@ -24,10 +24,10 @@ const Romantic = () => {
           Our Romantic Tropical Destinations
         </h2>
         <p>
-          Et labore harum non nobis ipsum eum molestias mollitia et corporis
-          praesentium a laudantium internos. Non quis eius quo eligendi corrupti
-          et fugiat nulla qui soluta recusandae in maxime quasi aut ducimus
-          illum aut optio quibusdam!
+          Indulge in enchanting experiences with our romantic collection. From
+          candlelit dinners to sunset strolls, create unforgettable moments with
+          your loved one. Explore our curated selection and ignite the flame of
+          romance.
         </p>
         <button className="btn btn-sm md:btn-md rounded-full border-none bg-[#DF6951] font-light text-white">
           <span className="px-3">View Packages</span>

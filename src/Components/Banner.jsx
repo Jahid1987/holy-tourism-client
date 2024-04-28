@@ -1,5 +1,6 @@
 import bannerImg from "../assets/images/banner.png";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { Fade } from "react-awesome-reveal";
 const Banner = () => {
   return (
     <div
@@ -8,9 +9,13 @@ const Banner = () => {
         background: `linear-gradient(0deg, rgba(0, 0, 0, 0.33) 0%, rgba(0, 0, 0, 0.33) 100%), url(${bannerImg}) lightgray 50% / cover no-repeat`,
       }}
     >
-      <div className="px-3 md:px-5 lg:px-10 max-w-[1024px] mx-auto pt-20 lg:pt-40 pb-20 w-full md:w-3/4 lg:w-2/3">
+      <div className="px-3 md:px-5 lg:px-10 max-w-[1320px] mx-auto pt-20 lg:pt-40 pb-20 w-full md:w-3/4 lg:w-2/3">
         <h1 className=" text-3xl lg:text-4xl font-bold text-white">
-          No matter where you’re going to, we’ll take you there
+          No matter where you’re going to,
+          <br />
+          <Fade delay={1e3} cascade damping={1e-1}>
+            we’ll take you there
+          </Fade>
         </h1>
         <div
           style={{

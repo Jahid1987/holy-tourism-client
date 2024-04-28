@@ -10,7 +10,7 @@ const MyList = () => {
       .then((data) => setMyList(data));
   }, []);
   return (
-    <div>
+    <div className="max-w-[1320px] mx-auto">
       {/* section title  */}
       <div
         className="py-4"
