@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/spot/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spots/${params.id}`),
+          fetch(`https://holy-tourism-server.vercel.app/spots/${params.id}`),
         element: <Spot></Spot>,
       },
       {

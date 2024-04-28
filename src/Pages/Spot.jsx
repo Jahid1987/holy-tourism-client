@@ -82,7 +82,7 @@ const Spot = () => {
             />
           </div>
           <button className="btn btn-sm md:btn-md rounded-full border-none bg-[#DF6951] font-light text-white">
-            <span className="px-3">Add to Favorite List</span>
+            <span className="px-3">Book Now</span>
           </button>
         </div>
       </div>

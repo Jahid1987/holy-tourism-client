@@ -1,7 +1,6 @@
 import { CiLocationOn } from "react-icons/ci";
 import { CiCalendar } from "react-icons/ci";
 import { FaBangladeshiTakaSign } from "react-icons/fa6";
-import demoImg from "../assets/images/demo_spot.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
@@ -19,7 +18,7 @@ const Card = ({ spot }) => {
         <div className="w-full h-[200px]">
           <img
             className="object-cover w-full h-full"
-            src={spot?.image || demoImg}
+            src={spot?.image}
             alt=""
           />
         </div>

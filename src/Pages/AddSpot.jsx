@@ -75,7 +75,7 @@ const AddCoffee = () => {
   // setting country flag to show in all spots sections in the corner
   function handleCountryFlag(e) {
     const countryName = e.target.value;
-    fetch(`http://localhost:5000/countries/${countryName}`)
+    fetch(`https://holy-tourism-server.vercel.app/countries/${countryName}`)
       .then((res) => res.json())
       .then((data) => setFlag(data.image));
     console.log(flag);
