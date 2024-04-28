@@ -59,7 +59,7 @@ const Nav = () => {
           </ul>
         </div>
 
-        <Link className="btn btn-ghost text-xl" to="/">
+        <Link className="font-bold text-xl" to="/">
           Holy Tourism
         </Link>
       </div>
@@ -67,12 +67,27 @@ const Nav = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end space-x-2">
+        {user ? (
+          <button
+            onClick={handleSignOut}
+            className="border-b-orange-600 border-spacing-4 border-b-2 font-bold pr-3"
+          >
+            Log Out
+          </button>
+        ) : (
+          <Link
+            to={"/login"}
+            className="border-b-orange-600 border-spacing-4 border-b-2 font-bold pr-3"
+          >
+            Login
+          </Link>
+        )}
         <a
           data-tooltip-id="user-tooltip"
           data-tooltip-content={user?.displayName}
           data-tooltip-place="left"
         >
-          <div className="h-12 w-12 rounded-full ">
+          <div className="h-8 md:h-12 w-8 md:w-12 rounded-full">
             <img
               className="rounded-full w-full h-full object-cover"
               alt="Tailwind CSS Navbar component"
@@ -81,21 +96,6 @@ const Nav = () => {
           </div>
         </a>
         <Tooltip id="user-tooltip" />
-        {user ? (
-          <button
-            onClick={handleSignOut}
-            className="btn btn-sm md:btn-md btn-outline btn-[#DF6951]"
-          >
-            Log Out
-          </button>
-        ) : (
-          <Link
-            to={"/login"}
-            className="btn btn-sm md:btn-md btn-outline btn-[#DF6951]"
-          >
-            Login
-          </Link>
-        )}
       </div>
     </div>
   );

@@ -27,7 +27,9 @@ const UpdatePost = () => {
     const short_description = form.short_description.value;
     const image = form.image.value;
     const travel_time = form.travel_time.value;
-    const total_visitors_per_year = form.total_visitors_per_year.value;
+    const total_visitors_per_year = parseInt(
+      form.total_visitors_per_year.value
+    );
     const user_email = user?.email;
     const user_name = user?.displayName;
     const country_flag = flag;

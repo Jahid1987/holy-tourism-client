@@ -3,11 +3,20 @@ import Card from "../Components/Card";
 import footerImg from "../assets/images/footer_bg.png";
 const AllSpots = () => {
   const [spots, setSpots] = useState([]);
+
   useEffect(() => {
     fetch("https://holy-tourism-server.vercel.app/spots")
       .then((res) => res.json())
       .then((data) => setSpots(data));
   }, []);
+
+  function handleSort(e) {
+    const sortType = e.target.value;
+    fetch(`https://holy-tourism-server.vercel.app/spots?${sortType}=1`)
+      .then((res) => res.json())
+      .then((data) => setSpots(data));
+    e.preventDefault();
+  }
   return (
     <div className="max-w-[1320px] mx-auto">
       {/* section title  */}
@@ -23,6 +32,18 @@ const AllSpots = () => {
           <h2 className="text-2xl md:text-4xl text-[#181E4B] font-bold">
             You Are Just A Click Away
           </h2>
+          {/* sorting functionality */}
+          <select
+            onChange={handleSort}
+            defaultValue="Sort By"
+            name="seasonality"
+            className="select select-bordered w-1/2 md:w-full mt-2"
+          >
+            <option disabled>Sort By</option>
+            <option value="average_cost">Average Cost</option>
+            <option value="default_rating">Rating</option>
+            <option value="total_visitors_per_year">Total Visitors</option>
+          </select>
         </div>
       </div>
       {spots.length > 0 ? (
