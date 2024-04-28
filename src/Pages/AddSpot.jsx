@@ -46,7 +46,6 @@ const AddCoffee = () => {
       country_flag,
       default_rating,
     };
-    console.log(newSpot);
     fetch("https://holy-tourism-server.vercel.app/spots", {
       method: "POST",
       headers: {

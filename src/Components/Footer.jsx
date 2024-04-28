@@ -7,13 +7,13 @@ import { FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      className=" max-w-[1728px] mx-auto h-72 bg-white"
+      className=" max-w-[1728px] mx-auto h-72"
       style={{
         backgroundColor: "white",
         background: `url(${footerImg}) -0.019px -41.058px / 154.946% 129.339% no-repeat`,
       }}
     >
-      <div className="px-1 xl:px-0 grid gap-4 text-center md:text-left grid-cols-1 md:grid-cols-3 max-w-[1020px] mx-auto  py-20">
+      <div className="px-1 xl:px-0 grid  justify-start gap-4 text-center md:text-left grid-cols-1 md:grid-cols-3 max-w-[1020px] mx-auto  py-20">
         <div className="space-y-4">
           <Link className="btn btn-ghost text-xl" to="/">
             Holy Tourism
@@ -27,6 +27,9 @@ const Footer = () => {
             <CiLinkedin />
             <CiTwitter />
           </div>
+          <p>
+            Cell: <span className="text-gray-400">+88 01643 47 89 96</span>
+          </p>
         </div>
         <div>
           <p className="font-bold text-xl">Company</p>
@@ -69,6 +72,14 @@ const Footer = () => {
           </form>
         </div>
       </div>
+      <footer className="footer footer-center p-4 bg-base-300 text-base-content">
+        <aside>
+          <p>
+            Copyright © 2024 - All right reserved by{" "}
+            <span className="text-[#DF6951]">HOLY TOURISM</span> Ltd
+          </p>
+        </aside>
+      </footer>
     </div>
   );
 };

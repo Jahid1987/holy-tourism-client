@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import LinesEllipsis from "react-lines-ellipsis";
 
 const Card = ({ spot }) => {
   function onChange(newvalue) {
@@ -49,7 +50,13 @@ const Card = ({ spot }) => {
           <FaBangladeshiTakaSign className="inline text-lg" />
           <span className="text-sm">/person</span>
         </p>
-        <p>{spot?.short_description}</p>
+        <LinesEllipsis
+          text={spot?.short_description}
+          maxLine="2"
+          ellipsis=" . . ."
+          trimRight
+          basedOn="letters"
+        />
 
         <div className="card-actions">
           <button className="btn btn-sm md:btn-md rounded-full border-none bg-[#DF6951] font-light text-white">
