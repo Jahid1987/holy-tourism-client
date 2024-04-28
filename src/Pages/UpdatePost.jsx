@@ -2,19 +2,21 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import useAuth from "../CustomHooks/useAuth";
 import footerImg from "../assets/images/footer_bg.png";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
-const AddPost = () => {
+const UpdatePost = () => {
   const { user } = useAuth();
   const [countries, setCountries] = useState([]);
-  const [flag, setFlag] = useState("");
-
+  const spot = useLoaderData();
+  const [flag, setFlag] = useState(spot.country_flag);
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("https://holy-tourism-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);
   // adding spost to the spot collection
-  function handleAddSpot(e) {
+  function handleUpdateSpot(e) {
     e.preventDefault();
     const form = e.target;
     const tourist_spot_name = form.tourist_spot_name.value;
@@ -31,7 +33,7 @@ const AddPost = () => {
     const country_flag = flag;
     const default_rating = Math.floor(Math.random() * 4) + 2;
 
-    const newSpot = {
+    const updatedSpot = {
       tourist_spot_name,
       average_cost,
       location,
@@ -46,23 +48,23 @@ const AddPost = () => {
       country_flag,
       default_rating,
     };
-    fetch("https://holy-tourism-server.vercel.app/spots", {
-      method: "POST",
+    fetch(`http://localhost:5000/spots/${spot._id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newSpot),
+      body: JSON.stringify(updatedSpot),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.modifiedCount) {
           Swal.fire({
             icon: "success",
-            title: "A Spot is Successfullly Added",
+            title: "The Spot is Successfullly Updated",
             showConfirmButton: false,
             timer: 1500,
           });
-          form.reset();
+          navigate("/list");
         } else {
           Swal.fire({
             icon: "error",
@@ -78,7 +80,6 @@ const AddPost = () => {
     fetch(`https://holy-tourism-server.vercel.app/countries/${countryName}`)
       .then((res) => res.json())
       .then((data) => setFlag(data.image));
-    console.log(flag);
   }
   return (
     <div className="pb-10">
@@ -98,7 +99,7 @@ const AddPost = () => {
             </h2>
           </div>
         </div>
-        <form onSubmit={handleAddSpot} className="px-3">
+        <form onSubmit={handleUpdateSpot} className="px-3">
           {/* form row  */}
           <div className="md:flex gap-3">
             <label className="form-control md:w-1/2 space-y-2">
@@ -111,6 +112,7 @@ const AddPost = () => {
                 type="text"
                 name="tourist_spot_name"
                 placeholder="Enter Spot Name"
+                defaultValue={spot?.tourist_spot_name}
                 className="input input-bordered w-full"
               />
             </label>
@@ -123,6 +125,7 @@ const AddPost = () => {
               <input
                 type="number"
                 name="average_cost"
+                defaultValue={spot?.average_cost}
                 placeholder="Enter Average Cost"
                 className="input input-bordered w-full"
               />
@@ -139,6 +142,7 @@ const AddPost = () => {
               <input
                 type="text"
                 name="location"
+                defaultValue={spot?.location}
                 placeholder="Enter Location"
                 className="input input-bordered w-full"
               />
@@ -150,7 +154,7 @@ const AddPost = () => {
                 </span>
               </div>
               <select
-                defaultValue="Select Season"
+                defaultValue={spot?.seasonality}
                 name="seasonality"
                 className="select select-bordered w-full"
               >
@@ -175,13 +179,13 @@ const AddPost = () => {
               </div>
               <select
                 onChange={handleCountryFlag}
-                defaultValue="Select Country"
+                defaultValue={spot?.country_name}
                 name="country_name"
                 className="select select-bordered w-full"
               >
                 <option disabled>Select Country</option>
                 {countries.map((country) => (
-                  <option key={country._id}>{country.name}</option>
+                  <option key={country?._id}>{country.name}</option>
                 ))}
               </select>
             </label>
@@ -194,6 +198,7 @@ const AddPost = () => {
               <input
                 type="text"
                 name="total_visitors_per_year"
+                defaultValue={spot?.total_visitors_per_year}
                 placeholder="Enter Total Visitor/Year"
                 className="input input-bordered w-full"
               />
@@ -210,6 +215,7 @@ const AddPost = () => {
               <input
                 type="text"
                 name="travel_time"
+                defaultValue={spot?.travel_time}
                 placeholder="Enter Travel Time"
                 className="input input-bordered w-full"
               />
@@ -223,6 +229,7 @@ const AddPost = () => {
               <input
                 type="text"
                 name="short_description"
+                defaultValue={spot?.short_description}
                 placeholder="Enter Short Description"
                 className="input input-bordered w-full"
               />
@@ -239,6 +246,7 @@ const AddPost = () => {
               <input
                 type="text"
                 name="image"
+                defaultValue={spot?.image}
                 placeholder="Enter Image"
                 className="input input-bordered w-full"
               />
@@ -248,7 +256,7 @@ const AddPost = () => {
             role="submit"
             className="btn float-end btn-sm md:btn-md rounded-full border-none bg-[#DF6951] font-light text-white mt-5"
           >
-            <span className="px-3">Add Tourist Spot</span>
+            <span className="px-3">Update Tourist Spot</span>
           </button>
         </form>
       </div>
@@ -256,4 +264,4 @@ const AddPost = () => {
   );
 };
 
-export default AddPost;
+export default UpdatePost;

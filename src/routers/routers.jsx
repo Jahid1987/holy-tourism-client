@@ -8,6 +8,7 @@ import Spot from "../Pages/Spot";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../Components/PrivateRoute";
+import UpdatePost from "../Pages/UpdatePost";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,12 @@ const router = createBrowserRouter([
             <AddSpot></AddSpot>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/update/:id",
+        loader: ({ params }) =>
+          fetch(`https://holy-tourism-server.vercel.app/spots/${params.id}`),
+        element: <UpdatePost></UpdatePost>,
       },
       {
         path: "/list",

@@ -13,6 +13,7 @@ import Swal from "sweetalert2";
 const MyList = () => {
   const [myList, setMyList] = useState([]);
   const { user } = useAuth();
+
   useEffect(() => {
     fetch(`https://holy-tourism-server.vercel.app/lists/${user.email}`)
       .then((res) => res.json())
