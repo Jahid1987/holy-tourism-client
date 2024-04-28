@@ -33,7 +33,7 @@ const MyList = () => {
       confirmButtonText: "Delete it Anyway!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/spots/${id}`, {
+        fetch(`https://holy-tourism-server.vercel.app/spots/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -42,7 +42,7 @@ const MyList = () => {
               const filteredSpots = myList.filter((item) => item._id !== id);
               setMyList(filteredSpots);
               Swal.fire({
-                title: "Deleted!",
+                title: "Spot Deleted!",
                 text: "Your file has been deleted.",
                 icon: "success",
               });

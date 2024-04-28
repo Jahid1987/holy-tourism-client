@@ -48,7 +48,7 @@ const UpdatePost = () => {
       country_flag,
       default_rating,
     };
-    fetch(`http://localhost:5000/spots/${spot._id}`, {
+    fetch(`https://holy-tourism-server.vercel.app/spots/${spot._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
