@@ -1,6 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-
+import useAuth from "../CustomHooks/useAuth";
+import defaultUserImage from "../assets/images/user.png";
+import { toast } from "react-toastify";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 const Nav = () => {
+  const { user, signOutUser } = useAuth();
   const navLinks = (
     <>
       <li>
@@ -17,6 +22,15 @@ const Nav = () => {
       </li>
     </>
   );
+  // user loggin out
+  async function handleSignOut() {
+    try {
+      await signOutUser();
+      toast.success("Successfully Log out");
+    } catch (error) {
+      toast.error("Something wrong.");
+    }
+  }
   return (
     <div className="navbar  max-w-[1320px] mx-auto">
       <div className="navbar-start">
@@ -52,13 +66,36 @@ const Nav = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
-      <div className="navbar-end">
-        <Link to="/login">
-          {" "}
-          <button className="btn btn-sm md:btn-md rounded-full border-none bg-[#DF6951] text-white">
-            <span className="px-6">Login</span>
+      <div className="navbar-end space-x-2">
+        <a
+          data-tooltip-id="user-tooltip"
+          data-tooltip-content={user?.displayName}
+          data-tooltip-place="left"
+        >
+          <div className="h-12 w-12 rounded-full ">
+            <img
+              className="rounded-full w-full h-full object-cover"
+              alt="Tailwind CSS Navbar component"
+              src={`${user?.photoURL || defaultUserImage}`}
+            />
+          </div>
+        </a>
+        <Tooltip id="user-tooltip" />
+        {user ? (
+          <button
+            onClick={handleSignOut}
+            className="btn btn-sm md:btn-md btn-outline btn-[#DF6951]"
+          >
+            Log Out
           </button>
-        </Link>
+        ) : (
+          <Link
+            to={"/login"}
+            className="btn btn-sm md:btn-md btn-outline btn-[#DF6951]"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

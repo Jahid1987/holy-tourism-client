@@ -18,7 +18,7 @@ const Register = () => {
   async function handleRegister(data) {
     try {
       await registerWithEmailPass(data.email, data.password);
-      await updateUserProfile(data.name);
+      await updateUserProfile(data.name, data.photo);
       navigate("/");
       toast.success("Registration successfull!");
     } catch (error) {
