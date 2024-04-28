@@ -28,7 +28,9 @@ const TouristSpots = () => {
           ))}
         </div>
       ) : (
-        <p>Loading ...</p>
+        <div className=" w-full md:w-2/3 lg:w-1/3 mx-auto text-center my-5 md:my-10">
+          <span className="loading loading-spinner loading-lg text-[#DF6951]"></span>
+        </div>
       )}
       {/* showing show all button  */}
       {spots.length > 6 && (

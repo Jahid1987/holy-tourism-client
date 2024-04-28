@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      className=" max-w-[1440px] mx-auto h-72 bg-white"
+      className=" max-w-[1728px] mx-auto h-72 bg-white"
       style={{
         backgroundColor: "white",
         background: `url(${footerImg}) -0.019px -41.058px / 154.946% 129.339% no-repeat`,

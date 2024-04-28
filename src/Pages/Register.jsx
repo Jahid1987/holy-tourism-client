@@ -34,12 +34,26 @@ const Register = () => {
             <span className="label-text">User Name</span>
           </label>
           <input
-            type="name"
+            type="text"
             placeholder="name"
             className="input input-bordered"
             {...register("name", { required: true })}
           />
           {errors.name && (
+            <span className="text-red-500">This field is required</span>
+          )}
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photo</span>
+          </label>
+          <input
+            type="text"
+            placeholder="photo"
+            className="input input-bordered"
+            {...register("photo", { required: true })}
+          />
+          {errors.photo && (
             <span className="text-red-500">This field is required</span>
           )}
         </div>

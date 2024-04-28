@@ -31,10 +31,11 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, pass);
   }
   // updating user profile
-  function updateUserProfile(name) {
-    setIsLoading(true);
+  function updateUserProfile(name, photo) {
+    setIsLoading(false);
     return updateProfile(auth.currentUser, {
       displayName: name,
+      photoURL: photo,
     });
   }
 
