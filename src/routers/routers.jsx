@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import PrivateRoute from "../Components/PrivateRoute";
 import UpdatePost from "../Pages/UpdatePost";
 import Error from "../Pages/Error";
+import CountryWiseSpots from "../Pages/CountryWiseSpots";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/countrywise/:country",
+        element: <CountryWiseSpots></CountryWiseSpots>,
       },
     ],
   },
