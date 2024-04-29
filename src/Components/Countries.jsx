@@ -13,7 +13,7 @@ const Countries = () => {
       {/* section title  */}
       <div className=" w-full md:w-2/3 lg:w-2/4 mx-auto text-center my-5 md:my-10">
         <h3 className="text-[#DF6951] text-lg">ALL COUNTRIES</h3>
-        <h2 className="text-3xl md:text-4xl text-[#181E4B] font-bold">
+        <h2 className="text-3xl md:text-4xl   font-bold">
           Countries With Heavenly Spots
         </h2>
       </div>

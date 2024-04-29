@@ -13,7 +13,7 @@ const Review = () => {
       {/* section title  */}
       <div className=" w-full md:w-2/3 lg:w-2/4 mx-auto text-center pt-32  md:pt-40 lg:pt-44">
         <h3 className="text-[#DF6951] text-lg">PROMOTION</h3>
-        <h2 className="text-3xl md:text-4xl text-[#181E4B] font-bold">
+        <h2 className="text-3xl md:text-4xl   font-bold">
           See What Our Clients Say About Us
         </h2>
       </div>

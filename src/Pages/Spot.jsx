@@ -15,7 +15,7 @@ const Spot = () => {
       <div>
         <div className=" w-full md:w-2/3 lg:w-1/3 mx-auto text-center my-5 md:my-10">
           <h3 className="text-[#DF6951] text-base lg:text-lg">DETAILS OF</h3>
-          <h2 className="text-2xl md:text-4xl text-[#181E4B] font-bold">
+          <h2 className="text-2xl md:text-4xl   font-bold">
             {spot?.tourist_spot_name}
           </h2>
         </div>

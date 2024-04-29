@@ -9,12 +9,13 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "../Components/PrivateRoute";
 import UpdatePost from "../Pages/UpdatePost";
+import Error from "../Pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    errorElement: <h3>Page not Found</h3>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

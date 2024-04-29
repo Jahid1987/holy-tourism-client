@@ -20,7 +20,7 @@ const Romantic = () => {
       {/* section title  */}
       <div className=" w-full flex-1 space-y-5">
         <h3 className="text-[#DF6951] text-lg">Honeymoon Specials</h3>
-        <h2 className="text-3xl md:text-4xl text-[#181E4B] font-bold">
+        <h2 className="text-3xl md:text-4xl   font-bold">
           Our Romantic Tropical Destinations
         </h2>
         <p>

@@ -64,7 +64,7 @@ const MyList = () => {
       >
         <div className=" w-full md:w-2/3 lg:w-1/3 mx-auto text-center my-5 md:my-10">
           <h3 className="text-[#DF6951] text-base lg:text-lg">MY LIST</h3>
-          <h2 className="text-2xl md:text-4xl text-[#181E4B] font-bold">
+          <h2 className="text-2xl md:text-4xl   font-bold">
             {myList.length} Spots Added By {user?.displayName}
           </h2>
         </div>

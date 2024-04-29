@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAd7UYgcxhGx0IRdHTKNbvoRS9BaYt3A8I",
-  authDomain: "holy-tourism.firebaseapp.com",
-  projectId: "holy-tourism",
-  storageBucket: "holy-tourism.appspot.com",
-  messagingSenderId: "303604251001",
-  appId: "1:303604251001:web:ad1d7d13ebcc4bbba657a8",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

@@ -48,7 +48,16 @@ const Card = ({ spot }) => {
           />
         </div>
         <p>
-          Best in: <span className="text-gray-400">{spot?.seasonality}</span>
+          <span>
+            Best in: <span className="text-gray-400">{spot?.seasonality}</span>
+          </span>
+          <br />
+          <span>
+            Visitors:{" "}
+            <span className="text-gray-400">
+              {spot?.tota_visitors_per_year}
+            </span>
+          </span>
         </p>
         <p className="text-[#DF6951] text-xl md:text-2xl">
           {spot?.average_cost}
