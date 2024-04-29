@@ -80,7 +80,6 @@ const AddPost = () => {
     fetch(`https://holy-tourism-server.vercel.app/countries/${countryName}`)
       .then((res) => res.json())
       .then((data) => setFlag(data.image));
-    console.log(flag);
   }
   return (
     <div className="pb-10">

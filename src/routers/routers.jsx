@@ -42,7 +42,11 @@ const router = createBrowserRouter([
         path: "/update/:id",
         loader: ({ params }) =>
           fetch(`https://holy-tourism-server.vercel.app/spots/${params.id}`),
-        element: <UpdatePost></UpdatePost>,
+        element: (
+          <PrivateRoute>
+            <UpdatePost></UpdatePost>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/list",
