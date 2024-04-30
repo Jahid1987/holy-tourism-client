@@ -32,10 +32,11 @@ const Review = () => {
         />
         <div className="px-5 mt-4">
           <p>
-            Vel officiis dolor ea illo aut eligendi ullam non laudantium magnam
-            et recusandae molestiae sit iure unde aut voluptate quaerat. Id sunt
-            provident quo possimus impedit vel doloremque obcaecati qui ullam
-            consectetur et ipsum omnis.
+            Holy Tourism is a must-visit destination for anyone looking to
+            explore the beauty and diversity of Southeast Asia. Whether you are
+            a seasoned traveler or embarking on your first adventure, this
+            website is sure to ignite your wanderlust and spark new travel
+            dreams.
           </p>
           <p className="font-bold">Christine Beckam - Designer</p>
         </div>
