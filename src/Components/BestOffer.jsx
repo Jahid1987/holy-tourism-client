@@ -20,7 +20,7 @@ const BestOffer = () => {
           </div>
           <p className="text-sm font-bold">Guided Tours</p>
           <p className="text-gray-400 text-sm">
-            sunt qui repellat saepe quo velit aperiam id aliquam placeat.
+            Explore confidently with knowledgeable guides by your side.
           </p>
         </div>
         <div className="space-y-2 text-center p-10 bg-white shadow-xl rounded-xl">
@@ -33,7 +33,7 @@ const BestOffer = () => {
           </div>
           <p className="text-sm font-bold">Best Flights Options</p>
           <p className="text-gray-400 text-sm">
-            sunt qui repellat saepe quo velit aperiam id aliquam placeat.
+            Discover unbeatable deals for seamless travel.
           </p>
         </div>
         <div className="space-y-2 text-center p-10">
@@ -42,7 +42,7 @@ const BestOffer = () => {
           </div>
           <p className="text-sm font-bold">Religious Tours</p>
           <p className="text-gray-400 text-sm">
-            sunt qui repellat saepe quo velit aperiam id aliquam placeat.
+            Embark on spiritual journeys to sacred destinations.
           </p>
         </div>
         <div className="space-y-2 text-center p-10">
@@ -53,9 +53,9 @@ const BestOffer = () => {
               alt=""
             />
           </div>
-          <p className="text-sm font-bold">Medical insurance</p>
+          <p className="text-sm font-bold">Medical Tours</p>
           <p className="text-gray-400 text-sm">
-            sunt qui repellat saepe quo velit aperiam id aliquam placeat.
+            Access world-class healthcare while traveling with peace of mind.
           </p>
         </div>
       </div>
