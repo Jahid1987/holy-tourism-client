@@ -11,6 +11,7 @@ import PrivateRoute from "../Components/PrivateRoute";
 import UpdatePost from "../Pages/UpdatePost";
 import Error from "../Pages/Error";
 import CountryWiseSpots from "../Pages/CountryWiseSpots";
+import Pagination from "../Pages/Pagination";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/pagination",
+        element: <Pagination />,
       },
       {
         path: "/spots",
