@@ -1,8 +1,4 @@
-## Type: B9 A10 Type-01 Requirements
-
-## Selected Category: Southeast Asia
-
-# HOLY TOURISM
+# HOLY TOURISM (Server Site)
 
 ### Live link: [https://holy-tourism.web.app/]
 
@@ -10,46 +6,32 @@
 
 "Holy Tourism" is a website dedicated to showcasing tourist spots in Southeast Asia. From stunning landscapes to cultural landmarks, our platform aims to inspire travel enthusiasts and help them discover the beauty of the region.
 
-## Features
+## Main Features
 
-### Home Page Sections
+- user can find tourists spots in south asian countries
+- authentication applied
+- user can find spots based on countries also
+- user can sort by cost, rating and visitors
 
-- Nav: Navigate through different sections of the website.
-- Banner: Captivating visuals and introductory message to engage visitors.
-- All Spots: Browse through a comprehensive list of tourist spots in Southeast Asia.
-- Romantic Tropical Destinations: Explore romantic getaways and destinations for couples.
-- Country Wise Spots: Discover tourist spots categorized by country for easier navigation.
-- Client Review: Read testimonials and reviews from satisfied clients.
-- Footer: Find useful links, contact information, social media links, and subcribe for newsletter in the footer section.
+## 🛠 Main Technologies used
 
-## Other pages
+- ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
+- ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=white)
 
-### All Tourists Spots
+- jwt is used
 
-- Brows All collected spots from South asian countries heavenly spots
-- Sort lists by average cost, ratings and total visitors
+## ⚙️ To Run locally
 
-### Add Tourist Spot and Update Spot
+- clone first
+- npm i
+- setup you .env file to update
 
-- Contribute to the platform by adding new tourist spots.
-- Update listed data by specific user
+1. firebase config:
+   VITE_apiKey=
+   VITE_authDomain=
+   VITE_projectId=
+   VITE_storageBucket=
+   VITE_messagingSenderId=
+   VITE_appId=
 
-### My List
-
-- Keep track what a specific user contributed to this site
-
-### Authentication
-
-- Register, Login, and sign out funtionality
-
-## Usage
-
-- Explore different sections of the website using the navigation menu.
-- Browse through the list of tourist spots and click on each spot to view detailed information.
-- Add new tourist spots to contribute to the platform's database.
-- Update listed data
-- Keep track lists that you have added.
-
-## Created By
-
-- Jahid Anwer
+- npm dev
