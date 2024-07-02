@@ -18,8 +18,6 @@
 - ![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=white)
 - ![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?style=flat&logo=firebase&logoColor=white)
 
-- jwt is used
-
 ## ⚙️ To Run locally
 
 - clone first
